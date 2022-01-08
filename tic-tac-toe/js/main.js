@@ -6,8 +6,17 @@ var jugador1 = true;
 let elemento = "x";
 let piezas_insertadas = 0;
 var columnas = document.querySelectorAll("table tr td");
-var jugador_1 = prompt("Ingresa tu nombre").replace(/^\w/, (c) => c.toUpperCase());
-var jugador_2 = prompt("Ingresa el nombre de tu contrincante").replace(/^\w/, (c) => c.toUpperCase());
+
+var jugador_1 = null, jugador_2 = null;
+try {
+    var j1 = prompt("Ingresa tu nombre").replace(/^\w/, (c) => c.toUpperCase());
+    var j2 = prompt("Ingresa el nombre de tu contrincante").replace(/^\w/, (c) => c.toUpperCase());
+
+} catch (error) {
+    jugador_1 = (j1 == null) ? "Isaias" : j1;
+    jugador_2 = (j1 == null) ? "Jugador_2" : j2;
+
+}
 var span = document.querySelectorAll(".jugadores span");
 var puntos = document.querySelectorAll(".puntos span");
 var pj1 = 0, pj2 = 0;
