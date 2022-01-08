@@ -11,7 +11,8 @@ var jugador_1 = null, jugador_2 = null;
 try {
     var j1 = prompt("Ingresa tu nombre").replace(/^\w/, (c) => c.toUpperCase());
     var j2 = prompt("Ingresa el nombre de tu contrincante").replace(/^\w/, (c) => c.toUpperCase());
-
+    jugador_1 = (j1 == null) ? "Isaias" : j1;
+    jugador_2 = (j1 == null) ? "Jugador_2" : j2;
 } catch (error) {
     jugador_1 = (j1 == null) ? "Isaias" : j1;
     jugador_2 = (j1 == null) ? "Jugador_2" : j2;
@@ -69,11 +70,14 @@ columnas.forEach(td => {
                         piezas_insertadas = 0;
                         span[1].style.textDecoration = "none";
                         span[0].style.textDecoration = "underline";
+                        jugador1 = true;
+                        alert(tablero);
                     }, 50);
                     setTimeout(function () {
                         setear_tablero(columnas);
                         pj1 += 1;
                         puntos[0].innerText = pj1.toString();
+                        tablero = [[], [], []];
                     }, 900);
                     empate = false;
                 }
@@ -84,7 +88,8 @@ columnas.forEach(td => {
                         piezas_insertadas = 0;
                         span[1].style.textDecoration = "none";
                         span[0].style.textDecoration = "underline";
-
+                        jugador1 = true;
+                        tablero = [[], [], []];
                     }, 50);
                     setTimeout(function () {
                         setear_tablero(columnas);
@@ -102,6 +107,10 @@ columnas.forEach(td => {
                 setear_tablero(columnas);
                 casillas_out = [];
                 piezas_insertadas = 0;
+                span[1].style.textDecoration = "none";
+                span[0].style.textDecoration = "underline";
+                jugador1 = true;
+                tablero = [[], [], []];
             }, 1000);
         }
     });
