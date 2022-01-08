@@ -14,6 +14,7 @@ table{
     border: 1px solid green;
     background-image: url("./img/texture-g4a6ab2292_1920.jpg");
     margin: 0% auto;
+    border: 1px thick;
 }
 
 table tr td{

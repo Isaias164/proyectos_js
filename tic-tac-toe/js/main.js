@@ -71,7 +71,6 @@ columnas.forEach(td => {
                         span[1].style.textDecoration = "none";
                         span[0].style.textDecoration = "underline";
                         jugador1 = true;
-                        alert(tablero);
                     }, 50);
                     setTimeout(function () {
                         setear_tablero(columnas);
