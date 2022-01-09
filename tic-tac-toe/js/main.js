@@ -65,7 +65,12 @@ columnas.forEach(td => {
                 let raya_diagonal_der = verificar_raya_diagonal_derecha(tablero, elemento);
                 if ((!jugador1 && raya_horinzontal && elemento == "x") || (!jugador1 && raya_vertical && elemento == "x") || (!jugador1 && raya_diagonal_izq && elemento == "x") || (!jugador1 && raya_diagonal_der && elemento == "x")) {
                     setTimeout(function () {
-                        alert(`Gano el jugador ${jugador_1}`);
+                        swal({
+                            title: "Juego finalizado",
+                            text: `a ganado el jugador ${jugador_1}`,
+                            icon: "success",
+                            button: "Jugar de nuevo!",
+                        });
                         casillas_out = [];
                         piezas_insertadas = 0;
                         span[1].style.textDecoration = "none";
@@ -82,7 +87,12 @@ columnas.forEach(td => {
                 }
                 else if ((jugador1 && raya_horinzontal && elemento == "o") || (jugador1 && raya_vertical && elemento == "o") || (jugador1 && raya_diagonal_izq && elemento == "o") || (jugador1 && raya_diagonal_der && elemento == "o")) {
                     setTimeout(function () {
-                        alert(`Gano el jugador ${jugador_2}`);
+                        swal({
+                            title: "Juego finalizado",
+                            text: `a ganado el jugador ${jugador_2}`,
+                            icon: "success",
+                            button: "Jugar de nuevo!",
+                        });
                         casillas_out = [];
                         piezas_insertadas = 0;
                         span[1].style.textDecoration = "none";
@@ -102,7 +112,12 @@ columnas.forEach(td => {
         }
         if (empate && casillas_out.length == 9) {
             setTimeout(function () {
-                alert("Ha avido un empate");
+                swal({
+                    title: "Juego finalizado",
+                    text: `Ha avido un empate entre el jugador ${jugador_1} y el jugador ${jugador_2}`,
+                    icon: "success",
+                    button: "Jugar de nuevo!",
+                });
                 setear_tablero(columnas);
                 casillas_out = [];
                 piezas_insertadas = 0;
